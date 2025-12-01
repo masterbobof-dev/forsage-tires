@@ -12,13 +12,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     
-    <!-- React & ReactDOM & Babel (for parsing JSX in browser) -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- React & ReactDOM & Babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Lucide Icons (Script version for global access) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
       body {
@@ -34,13 +29,13 @@
           scrollbar-width: none;
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
   }
 }
 </script>
@@ -49,34 +44,7 @@
   <body>
     <div id="root"></div>
 
-    <script type="text/babel">
-      const { useState, useEffect } = React;
-
-      // --- CONSTANTS & DATA ---
-      const PHONE_NUMBER_1 = "099 167 44 24";
-      const PHONE_NUMBER_2 = "063 582 38 58";
-      const PHONE_LINK_1 = "tel:+380991674424";
-      const PHONE_LINK_2 = "tel:+380635823858";
-      const MAP_EMBED_URL = "https://maps.google.com/maps?q=%D0%BC.+%D0%A1%D0%B8%D0%BD%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D0%B5,+%D0%B1%D1%83%D0%B4.+9&t=&z=15&ie=UTF8&iwloc=&output=embed";
-      const MAP_DIRECT_LINK = "https://share.google/PQZz6JyQrYR4Vayfv";
-      
-      const HERO_BG_IMAGE = "IMG_4686.JPG"; 
-      
-      const GALLERY_IMAGES = [
-        { src: "IMG_4686.JPG", alt: "Фасад шиномонтажу Forsage" },
-        { src: "IMG_4688.JPG", alt: "Робоча зона" },
-        { src: "IMG_4690.JPG", alt: "Обладнання" },
-      ];
-
-      // Icon mapping helper (since we are using Lucide global)
-      const Icon = ({ name, size = 24, className = "" }) => {
-        const LucideIcon = window.lucide.icons[name];
-        if (!LucideIcon) return null;
-        return <i data-lucide={name} className={className} style={{ width: size, height: size, display: 'inline-block' }}></i>;
-      };
-    </script>
-
-    <!-- Re-declaring script as module to use Imports directly -->
+    <!-- Main Application Script -->
     <script type="text/babel" data-type="module">
       import React, { useState, useEffect } from 'https://esm.sh/react@18.2.0';
       import { createRoot } from 'https://esm.sh/react-dom@18.2.0/client';
@@ -93,12 +61,14 @@
       const PHONE_LINK_2 = "tel:+380635823858";
       const MAP_EMBED_URL = "https://maps.google.com/maps?q=%D0%BC.+%D0%A1%D0%B8%D0%BD%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D0%B5,+%D0%B1%D1%83%D0%B4.+9&t=&z=15&ie=UTF8&iwloc=&output=embed";
       const MAP_DIRECT_LINK = "https://share.google/PQZz6JyQrYR4Vayfv";
+      
+      // Images - Uppercase as requested
       const HERO_BG_IMAGE = "IMG_4686.JPG";
       
       const GALLERY_IMAGES = [
         { src: "IMG_4686.JPG", alt: "Фасад шиномонтажу Forsage" },
-        { src: "IMG_4688.JPG", alt: "Робоча зона" },
-        { src: "IMG_4690.JPG", alt: "Обладнання" },
+        { src: "IMG_4697.JPG", alt: "Шиномонтаж та парковка" },
+        { src: "IMG_4699.JPG", alt: "В'їзд та територія" },
       ];
 
       const SERVICES = [
@@ -118,10 +88,9 @@
         { radius: '16', removeInstall: '35', balancing: '70', mounting: '75', total1: '200', total4: '800' },
         { radius: '17', removeInstall: '40', balancing: '75', mounting: '80', total1: '220', total4: '880' },
         { radius: '18', removeInstall: '50', balancing: '80', mounting: '90', total1: '250', total4: '1000' },
-        { radius: '19', removeInstall: '45', balancing: '90', mounting: '85', total1: '250', total4: '1000' },
-        { radius: '20', removeInstall: '50', balancing: '95', mounting: '90', total1: '260', total4: '1040' },
+        { radius: '19', removeInstall: '45', balancing: '90', mounting: '95', total1: '260', total4: '1040' },
+        { radius: '20', removeInstall: '50', balancing: '95', mounting: '100', total1: '270', total4: '1080' },
         { radius: '21', removeInstall: '70', balancing: '100', mounting: '100', total1: '300', total4: '1200' },
-        { radius: '22', removeInstall: '75', balancing: '105', mounting: '110', total1: '320', total4: '1280' },
         { radius: 'Позашляховий протектор', removeInstall: '+10', balancing: '+5', mounting: '+10', total1: '+25', total4: '+100', isSurcharge: true },
       ];
 
@@ -129,12 +98,11 @@
         { radius: '14', removeInstall: '30', balancing: '65', mounting: '60', total1: '180', total4: '720' },
         { radius: '15', removeInstall: '35', balancing: '65', mounting: '70', total1: '190', total4: '760' },
         { radius: '16', removeInstall: '40', balancing: '70', mounting: '75', total1: '210', total4: '840' },
-        { radius: '17', removeInstall: '45', balancing: '75', mounting: '80', total1: '220', total4: '880' },
-        { radius: '18', removeInstall: '55', balancing: '80', mounting: '85', total1: '250', total4: '1000' },
+        { radius: '17', removeInstall: '50', balancing: '75', mounting: '80', total1: '225', total4: '900' },
+        { radius: '18', removeInstall: '55', balancing: '90', mounting: '85', total1: '260', total4: '1040' },
         { radius: '19', removeInstall: '60', balancing: '90', mounting: '95', total1: '270', total4: '1080' },
         { radius: '20', removeInstall: '65', balancing: '100', mounting: '100', total1: '290', total4: '1160' },
         { radius: '21', removeInstall: '70', balancing: '110', mounting: '110', total1: '320', total4: '1280' },
-        { radius: '22', removeInstall: '80', balancing: '120', mounting: '120', total1: '360', total4: '1440' },
         { radius: 'Позашляховий протектор', removeInstall: '+10', balancing: '+5', mounting: '+10', total1: '+25', total4: '+100', isSurcharge: true },
       ];
 

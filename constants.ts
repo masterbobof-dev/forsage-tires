@@ -65,10 +65,9 @@ export const PRICING_DATA_CARS: PriceRow[] = [
   { radius: '16', removeInstall: '35', balancing: '70', mounting: '75', total1: '200', total4: '800' },
   { radius: '17', removeInstall: '40', balancing: '75', mounting: '80', total1: '220', total4: '880' },
   { radius: '18', removeInstall: '50', balancing: '80', mounting: '90', total1: '250', total4: '1000' },
-  { radius: '19', removeInstall: '45', balancing: '90', mounting: '85', total1: '250', total4: '1000' },
-  { radius: '20', removeInstall: '50', balancing: '95', mounting: '90', total1: '260', total4: '1040' },
+  { radius: '19', removeInstall: '45', balancing: '90', mounting: '95', total1: '260', total4: '1040' },
+  { radius: '20', removeInstall: '50', balancing: '95', mounting: '100', total1: '270', total4: '1080' },
   { radius: '21', removeInstall: '70', balancing: '100', mounting: '100', total1: '300', total4: '1200' },
-  { radius: '22', removeInstall: '75', balancing: '105', mounting: '110', total1: '320', total4: '1280' },
   { radius: 'Позашляховий протектор', removeInstall: '+10', balancing: '+5', mounting: '+10', total1: '+25', total4: '+100', isSurcharge: true },
 ];
 
@@ -76,12 +75,11 @@ export const PRICING_DATA_SUV: PriceRow[] = [
   { radius: '14', removeInstall: '30', balancing: '65', mounting: '60', total1: '180', total4: '720' },
   { radius: '15', removeInstall: '35', balancing: '65', mounting: '70', total1: '190', total4: '760' },
   { radius: '16', removeInstall: '40', balancing: '70', mounting: '75', total1: '210', total4: '840' },
-  { radius: '17', removeInstall: '45', balancing: '75', mounting: '80', total1: '220', total4: '880' },
-  { radius: '18', removeInstall: '55', balancing: '80', mounting: '85', total1: '250', total4: '1000' },
+  { radius: '17', removeInstall: '50', balancing: '75', mounting: '80', total1: '225', total4: '900' },
+  { radius: '18', removeInstall: '55', balancing: '90', mounting: '85', total1: '260', total4: '1040' },
   { radius: '19', removeInstall: '60', balancing: '90', mounting: '95', total1: '270', total4: '1080' },
   { radius: '20', removeInstall: '65', balancing: '100', mounting: '100', total1: '290', total4: '1160' },
   { radius: '21', removeInstall: '70', balancing: '110', mounting: '110', total1: '320', total4: '1280' },
-  { radius: '22', removeInstall: '80', balancing: '120', mounting: '120', total1: '360', total4: '1440' },
   { radius: 'Позашляховий протектор', removeInstall: '+10', balancing: '+5', mounting: '+10', total1: '+25', total4: '+100', isSurcharge: true },
 ];
 
